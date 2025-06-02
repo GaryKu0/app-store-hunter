@@ -5,33 +5,34 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Tests](https://img.shields.io/badge/tests-passing-green.svg)](#testing)
 
-**A powerful command-line to```bash
-git clone https://github.com/Garyku0/app-store-icon-hunter.git
-cd app-store-icon-hunter
-pip install -e ".[dev]"nd REST API for searching apps and downloading their icons from App Store and Google Play Store in multiple sizes.**
+**A powerful command-line tool and REST API for searching apps and downloading their icons from App Store and Google Play Store in multiple sizes.**
 
 Perfect for developers, designers, and anyone who needs quick access to high-quality app icons for mockups, presentations, or development projects.
 
 ## ✨ Features
 
 ### 🎯 Dual Interface
+
 - **Interactive CLI** with user-friendly menus and selection
 - **REST API Server** for programmatic access and integration
 - **Cross-platform** support (Windows, macOS, Linux)
 
 ### 🔍 Comprehensive Search
+
 - **App Store** search using iTunes Search API
 - **Google Play Store** search via SerpApi integration
 - **Multi-store** search capabilities
 - **Country-specific** search results
 
 ### 📱 Icon Management
+
 - **Multiple sizes**: 16px to 1024px icons
 - **Batch downloads** with progress tracking
 - **Custom size selection**
 - **Organized file structure** with app-specific folders
 
 ### 🎨 User Experience
+
 - **Interactive selection** - choose specific apps to download
 - **Bulk download** option for all search results
 - **Real-time progress** indicators
@@ -57,7 +58,7 @@ app-store-icon-hunter/
 │   ├── core/                       # Core functionality
 │   │   ├── __init__.py
 │   │   ├── app_store.py           # App Store API integration
-│   │   ├── google_play.py         # Google Play API integration  
+│   │   ├── google_play.py         # Google Play API integration
 │   │   └── downloader.py          # Icon downloading logic
 │   └── utils/                      # Utility functions
 │       ├── __init__.py
@@ -119,11 +120,14 @@ icon-hunter interactive
 ```
 
 # Custom icon sizes
+
 icon-hunter search "Discord" --sizes 64,128,256,512
 
 # Download specific app
+
 icon-hunter download "Twitter" --sizes 128,256
-```
+
+````
 
 ### API Server Usage
 
@@ -136,13 +140,14 @@ uvicorn app_store_icon_hunter.api.main:app --reload --port 8000
 # Server will be available at:
 # http://localhost:8000 - API endpoints
 # http://localhost:8000/docs - Interactive documentation
-```
+````
 
 ## 📖 Detailed Usage
 
 ### CLI Commands
 
 #### Search Command
+
 The enhanced search command now provides interactive selection:
 
 ```bash
@@ -150,6 +155,7 @@ icon-hunter search [SEARCH_TERM] [OPTIONS]
 ```
 
 **Options:**
+
 - `--store`: Choose store (`appstore`, `googleplay`, `both`)
 - `--country`: Country code (default: `us`)
 - `--limit`: Maximum results (default: `10`)
@@ -158,16 +164,17 @@ icon-hunter search [SEARCH_TERM] [OPTIONS]
 - `--auto-download/--interactive`: Download mode
 
 **Interactive Mode Example:**
+
 ```bash
 $ icon-hunter search "Instagram"
 🔍 Searching for 'Instagram' in both...
 
 ================================================================================
-#   App Name                           Store           Price      Rating  
+#   App Name                           Store           Price      Rating
 ================================================================================
-1   Instagram                          App Store       Free       4.5/5   
-2   Instagram Lite                     Google Play     Free       4.2/5   
-3   Instagram for Business             App Store       Free       4.1/5   
+1   Instagram                          App Store       Free       4.5/5
+2   Instagram Lite                     Google Play     Free       4.2/5
+3   Instagram for Business             App Store       Free       4.1/5
 ================================================================================
 
 Options:
@@ -186,6 +193,7 @@ Your choice: 1,2
 ```
 
 #### Download Command
+
 Direct download for specific apps:
 
 ```bash
@@ -193,6 +201,7 @@ icon-hunter download [APP_NAME] [OPTIONS]
 ```
 
 #### Server Command
+
 Start the API server:
 
 ```bash
@@ -200,6 +209,7 @@ icon-hunter server
 ```
 
 #### Config Command
+
 View current configuration:
 
 ```bash
@@ -209,11 +219,13 @@ icon-hunter config
 ### REST API Endpoints
 
 #### Search Apps
+
 ```http
 POST /search
 ```
 
 **Request Body:**
+
 ```json
 {
   "term": "Instagram",
@@ -224,6 +236,7 @@ POST /search
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -239,11 +252,13 @@ POST /search
 ```
 
 #### Download Icons
+
 ```http
 POST /download
 ```
 
 **Request Body:**
+
 ```json
 {
   "apps": [
@@ -259,6 +274,7 @@ POST /download
 ```
 
 **Response:**
+
 ```json
 {
   "job_id": "123e4567-e89b-12d3-a456-426614174000",
@@ -269,11 +285,13 @@ POST /download
 ```
 
 #### Check Download Status
+
 ```http
 GET /status/{job_id}
 ```
 
 **Response:**
+
 ```json
 {
   "job_id": "123e4567-e89b-12d3-a456-426614174000",
@@ -285,6 +303,7 @@ GET /status/{job_id}
 ```
 
 #### Download Files
+
 ```http
 GET /download/{job_id}
 ```
@@ -310,12 +329,14 @@ export ICON_HUNTER_PORT="8000"
 ### Supported Icon Sizes
 
 The tool supports all standard icon sizes:
+
 - **Tiny**: 16px, 32px
 - **Small**: 48px, 64px
 - **Medium**: 128px, 256px
 - **Large**: 512px, 1024px
 
 **Platform-specific recommendations:**
+
 - **iOS**: 57, 72, 114, 144, 512, 1024
 - **Android**: 48, 72, 96, 144, 192
 - **Web**: 16, 32, 48, 96, 128
@@ -431,6 +452,7 @@ twine upload dist/*
 ## 📝 API Documentation
 
 When running the API server, interactive documentation is available at:
+
 - **Swagger UI**: `http://localhost:8000/docs`
 - **ReDoc**: `http://localhost:8000/redoc`
 
@@ -449,7 +471,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 ### Development Setup
 
 ```bash
-git clone https://github.com/Garyku0/app-store-icon-hunter.git
+git clone https://github.com/your-username/app-store-icon-hunter.git
 cd app-store-icon-hunter
 pip install -e ".[dev]"
 ```
@@ -471,6 +493,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Please use [GitHub Issues](https://github.com/Garyku0/app-store-icon-hunter/issues) to report bugs or request features.
 
 **Bug Report Template:**
+
 ```
 **Description**
 A clear description of the bug.
@@ -491,18 +514,21 @@ What should happen.
 ## 📈 Roadmap
 
 ### Version 2.1.0
+
 - [ ] Image resizing with PIL/Pillow
 - [ ] SVG icon support
 - [ ] Batch processing from CSV files
 - [ ] Desktop GUI application
 
 ### Version 2.2.0
+
 - [ ] Icon optimization and compression
 - [ ] Advanced filtering options
 - [ ] Custom icon processing pipelines
 - [ ] Integration with design tools (Figma, Sketch)
 
 ### Version 3.0.0
+
 - [ ] Machine learning-based icon similarity search
 - [ ] Icon generation and customization
 - [ ] Cloud storage integration
@@ -511,12 +537,14 @@ What should happen.
 ## 📊 Performance
 
 ### Benchmarks
+
 - **Search Performance**: ~500ms per API call
 - **Download Speed**: ~2MB/s average (network dependent)
 - **Concurrent Downloads**: Up to 10 simultaneous
 - **Memory Usage**: <50MB typical
 
 ### Optimization Tips
+
 1. Use smaller icon size sets for faster downloads
 2. Leverage the `--auto-download` flag for batch operations
 3. Set up API keys for Google Play Store access
@@ -525,12 +553,14 @@ What should happen.
 ## 🔐 Security
 
 ### API Security
+
 - CORS enabled for web integration
 - Rate limiting on endpoints
 - Input validation and sanitization
 - Secure file handling
 
 ### Privacy
+
 - No user data collection
 - No icon content modification
 - Temporary file cleanup
@@ -540,4 +570,4 @@ What should happen.
 
 **Made with ❤️ for the developer community**
 
-*If this project helped you, please consider giving it a ⭐ on GitHub!*
+_If this project helped you, please consider giving it a ⭐ on GitHub!_
