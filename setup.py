@@ -6,12 +6,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="app-store-icon-hunter",
     version="2.0.0",
-    author="Developer",
-    author_email="developer@example.com",
+    author="SU-KO KUO",
+    author_email="su@okuso.uk",
     description="A powerful CLI tool and API for searching apps and downloading icons from App Store and Google Play",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/username/app-store-icon-hunter",
+    url="https://github.com/Garyku0/app-store-icon-hunter",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -23,6 +23,7 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
     ],
     python_requires=">=3.8",
     install_requires=[
@@ -41,6 +42,8 @@ setup(
             "pytest>=6.0",
             "black>=21.0",
             "flake8>=3.8",
+            "build>=0.7.0",
+            "twine>=3.0.0",
         ],
     },
     entry_points={
