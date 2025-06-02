@@ -476,6 +476,29 @@ cd app-store-icon-hunter
 pip install -e ".[dev]"
 ```
 
+### Publishing to PyPI
+
+The project includes automated scripts for publishing to PyPI:
+
+```bash
+# Test upload to TestPyPI first (recommended)
+./scripts/upload_to_pypi.sh --test
+
+# Upload to PyPI
+./scripts/upload_to_pypi.sh
+
+# Or use the Python version
+python3 scripts/upload_to_pypi.py --test  # TestPyPI
+python3 scripts/upload_to_pypi.py         # PyPI
+```
+
+**Before publishing:**
+1. Update version in `setup.py`
+2. Ensure you have `twine` installed: `pip install twine`
+3. Have your PyPI API token ready
+
+See [`scripts/README.md`](scripts/README.md) for detailed documentation.
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

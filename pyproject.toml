@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app-store-icon-hunter"
+version = "2.0.0"
+authors = [
+    {name = "SU-KO KUO", email = "su@okuso.uk"},
+]
+description = "A powerful CLI tool and API for searching apps and downloading icons from App Store and Google Play"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["app-store", "google-play", "icons", "cli", "api", "fastapi"]
+dependencies = [
+    "click>=8.0.0",
+    "requests>=2.25.0",
+    "Pillow>=8.0.0",
+    "fastapi>=0.68.0",
+    "uvicorn>=0.15.0",
+    "aiohttp>=3.8.0",
+    "aiofiles>=0.8.0",
+    "python-multipart>=0.0.5",
+    "pydantic>=1.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "build>=0.7.0",
+    "twine>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Garyku0/app-store-icon-hunter"
+Repository = "https://github.com/Garyku0/app-store-icon-hunter"
+Issues = "https://github.com/Garyku0/app-store-icon-hunter/issues"
+
+[project.scripts]
+icon-hunter = "app_store_icon_hunter.cli.main:cli"
+
+[tool.setuptools]
+packages = ["app_store_icon_hunter", "app_store_icon_hunter.api", "app_store_icon_hunter.cli", "app_store_icon_hunter.core", "app_store_icon_hunter.utils"]

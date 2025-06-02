@@ -154,3 +154,13 @@ Thumbs.db
 .env.local
 .env.production
 secrets.json
+
+# PyPI publishing artifacts
+LICENSE.backup
+LICENSE.temp
+MANIFEST.in.backup
+*.whl
+twine.log
+
+# Temporary files from upload script
+.upload_temp/
